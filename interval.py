@@ -5,7 +5,7 @@ import numpy as np
 import image_utils as util
 import pdb
 
-def threshold(im_array, size, lower_thresh, upper_thresh):
+def threshold_interval(im_array, size, lower_thresh, upper_thresh):
     def in_thresh(val):
         # pdb.set_trace()
         return val > lower_thresh and val < upper_thresh
@@ -50,7 +50,7 @@ if __name__ == "__main__":
     # print(np.asarray(im))
     # print(np.shape(test_arr))
     # print(im.size)
-    intervals = (threshold(a, np.shape(a), 0.3, 0.7))
+    intervals = (threshold_interval(a, np.shape(a), 0.3, 0.7))
     colors = [np.array([255, 0, 0]), np.array([0, 255, 0]), np.array([0, 0, 255]), np.array([255, 255, 0]), np.array([255, 0, 255]), np.array([0, 255, 255])]
     pdb.set_trace()
     ac = a.copy()
