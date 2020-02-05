@@ -1,14 +1,16 @@
 import image_utils as util
-
-def sort_pixels(im_array, intervals, min_interval=2, sorting_func=util.lightness, reverse=False):
+import pdb
+def sort_pixels(im_array, intervals, width, min_interval=2, sorting_func=util.lightness, reverse=False):
     for i, row in enumerate(intervals):
         for interval in row:
             if len(interval) > 1:
                 if interval[1] - interval[0] > min_interval:
-                    pixels = im_array[i][interval[0]:interval[1]]
+                    curr_row = i * width
+                    pixels = im_array[curr_row][interval[0]:interval[1]]
                     # pdb.set_trace()
                     ordered_pixels = sorted(pixels, key=lambda pix: sorting_func(pix), reverse=reverse)
-                    im_array[i][interval[0]:interval[1]] = ordered_pixels
+                    for j in range(width):
+                        im_array[curr_row+j][interval[0]:interval[1]] = ordered_pixels
     return im_array
 
 if __name__ == "__main__":
