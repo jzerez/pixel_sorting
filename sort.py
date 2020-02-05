@@ -1,13 +1,14 @@
 import image_utils as util
 
-def sort_pixels(im_array, size, intervals, min_interval=2, sorting_func=util.lightness, reverse=False):
+def sort_pixels(im_array, intervals, min_interval=2, sorting_func=util.lightness, reverse=False):
     for i, row in enumerate(intervals):
         for interval in row:
-            if len(interval) >= min_interval:
-                pixels = im_array[i][interval[0]:interval[1]]
-                pdb.set_trace()
-                ordered_pixels = sorted(pixels, key=lambda pix: sorting_func(pix), reverse=reverse)
-                im_array[i][interval[0]:interval[1]] = ordered_pixels
+            if len(interval) > 1:
+                if interval[1] - interval[0] > min_interval:
+                    pixels = im_array[i][interval[0]:interval[1]]
+                    # pdb.set_trace()
+                    ordered_pixels = sorted(pixels, key=lambda pix: sorting_func(pix), reverse=reverse)
+                    im_array[i][interval[0]:interval[1]] = ordered_pixels
     return im_array
 
 if __name__ == "__main__":
@@ -21,7 +22,7 @@ if __name__ == "__main__":
 
     intervals = (interval.threshold_interval(a, np.shape(a), 0.3, 0.7))
     colors = [np.array([255, 0, 0]), np.array([0, 255, 0]), np.array([0, 0, 255]), np.array([255, 255, 0]), np.array([255, 0, 255]), np.array([0, 255, 255])]
-    pdb.set_trace()
+
     ac = a.copy()
 
     new = sort_pixels(ac, ac.shape, intervals)
