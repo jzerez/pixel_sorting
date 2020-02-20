@@ -54,7 +54,7 @@ def test_levels(image, value_func):
         for x in range(size[1]):
             levels[y, x] = value_func(a[y, x])
     plt.figure()
-    f = plt.imshow(levels)
+    f = plt.imshow(levels, aspect='auto')
     plt.colorbar(f)
     if value_func == saturation:
         plt.title('Saturation of Image')
@@ -63,6 +63,7 @@ def test_levels(image, value_func):
     elif value_func == lightness:
         plt.title('lightness of Image')
     plt.show()
+
 
 def resize_image(image, factor):
     original_size = image.size
@@ -74,15 +75,15 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
     import pdb
     import timeit
-    im = Image.open('source/temple.jpg')
+    im = Image.open('helpme.jpg')
 
     # ac = np.zeros()
     # imm = crop_image(im, [400, 400])
     # imm.show()
-    im = resize_image(im, 10)
+    im = resize_image(im, 1)
     size = im.size
-    
+
     print(im.size)
     test_levels(im, lightness)
-    test_levels(im, hue)
-    test_levels(im, saturation)
+    # test_levels(im, hue)
+    # test_levels(im, saturation)

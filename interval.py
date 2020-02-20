@@ -28,6 +28,9 @@ def threshold_interval(im_array, size, lower_thresh, upper_thresh, width=1, func
             elif not open and valid:
                 intervals[i].append([x])
                 open = True
+        if open:
+            last = x-1
+            intervals[i][-1].append(last)
     return intervals
 
 def randomly_filter_interval(intervals, prob):
