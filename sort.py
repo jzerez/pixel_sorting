@@ -13,8 +13,10 @@ def sort_pixels(im_array, intervals, width, min_interval=2, sorting_func=util.li
                     ordered_pixels = np.array(sorted(pixels, key=lambda pix: sorting_func(pix), reverse=reverse))
 
                     for j in range(width):
-                        if curr_row + j < len(intervals):
+                        if curr_row + j < im_array.shape[0]:
                             im_array[curr_row+j][interval[0]:interval[1]] = ordered_pixels
+                        else:
+                            pdb.set_trace()
     return im_array
 
 def sort_intervals_only(im_array, intervals, width, min_interval=2, sorting_func=util.lightness, reverse=False, prob=0):

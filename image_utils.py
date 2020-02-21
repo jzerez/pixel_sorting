@@ -75,12 +75,12 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
     import pdb
     import timeit
-    im = Image.open('helpme.jpg')
+    im = Image.open('source/nebula1.jpg')
 
     # ac = np.zeros()
     # imm = crop_image(im, [400, 400])
     # imm.show()
-    im = resize_image(im, 1)
+    im = resize_image(im, 5)
     size = im.size
 
     print(im.size)

@@ -1,6 +1,6 @@
-image_rotation = -30+180
-source = './source/dragon.jpg'
-width = 1
+image_rotation = 135
+source = './source/nebula1.jpg'
+width = 4
 from PIL import Image
 import numpy as np
 import sort
@@ -17,8 +17,8 @@ original_size = im.size
 im = im.rotate(image_rotation, expand=True)
 a = np.asarray(im)
 
-intervals = (interval.threshold_interval(a, np.shape(a), 0.3, 0.6, width=width, func=util.lightness, inverted=True))
-intervals = interval.randomly_filter_interval(intervals, 0.5)
+intervals = (interval.threshold_interval(a, np.shape(a), 0.35, 0.75, width=width, func=util.lightness, inverted=False))
+intervals = interval.randomly_filter_interval(intervals, 0.1)
 # pdb.set_trace()
 
 colors = [np.array([255, 0, 0]), np.array([0, 255, 0]), np.array([0, 0, 255]), np.array([255, 255, 0]), np.array([255, 0, 255]), np.array([0, 255, 255])]
