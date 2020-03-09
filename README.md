@@ -1,8 +1,8 @@
 # Pixel Sorting
 This is an art project that allows you to create glitchy looking images through pixel sorting. In pixel sorting, you first iterate through the image, and identify intervals of pixels that fall within a certain threshold for some value (ex: pixel intensity or hue). Afterwards, you sort the pixels within each interval by some criteria (ex: pixel intensity or saturation). If the correct threshold values are chosen, you can make some pretty cool images, like this!
 
-![cherry_blossom.jpg before and after](./examples/cherry_blossom_comparison.jpg)
-![fake_temple.jpg before and after](./examples/fake_temple_comparison.jpg)
+![cherry_blossom.jpg before and after](./examples/cherry_blossom_comparison.jpg =800x)
+![fake_temple.jpg before and after](./examples/fake_temple_comparison.jpg =800x)
 
 ## Installation
 Install the dependencies before using:
