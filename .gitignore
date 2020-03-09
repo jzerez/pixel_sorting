@@ -1,0 +1,9 @@
+source/*
+!source/cherry_blossom.jpg
+!source/jiufen.jpg
+!source/fake_temple.jpg
+!source/ryb_neon_city.jpg
+!source/nebula1.jpg
+!source/nebula.jpg
+examples/misc
+examples/taipei
