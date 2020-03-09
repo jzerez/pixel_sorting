@@ -5,5 +5,11 @@ source/*
 !source/ryb_neon_city.jpg
 !source/nebula1.jpg
 !source/nebula.jpg
-results/misc
-results/taipei
+results/*
+!results/cherry_blossom_glitch.jpg
+!results/jiufen_glitch.jpg
+!results/fake_temple_glitch.jpg
+!results/taipei_neon_city_glitch.jpg
+!results/nebula1_glitch.jpg
+!results/nebula1_glitch_redux.jpg
+!results/nebula_glitch.jpg
