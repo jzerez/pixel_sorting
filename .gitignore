@@ -5,5 +5,5 @@ source/*
 !source/ryb_neon_city.jpg
 !source/nebula1.jpg
 !source/nebula.jpg
-examples/misc
-examples/taipei
+results/misc
+results/taipei
